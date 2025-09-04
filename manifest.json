@@ -1,0 +1,19 @@
+{
+"id": "mp.actor_year_subscribe",
+"name": "Actor & Year Auto-Subscribe",
+"version": "1.0.0",
+"author": "your-name",
+"entry": "plugin.py",
+"min_moviepilot_version": "1.9.0",
+"description": "按照演员姓名与年份创建/更新订阅规则，适配已接入的PT站，支持计划任务与手动执行。",
+"config_schema": {
+"actors": {"type": "array", "items": {"type": "string"}, "title": "演员名单", "default": []},
+"years": {"type": "array", "items": {"type": "integer"}, "title": "年份（可多选）", "default": []},
+"sites": {"type": "array", "items": {"type": "string"}, "title": "目标站点（留空=全部）", "default": []},
+"media_types": {"type": "array", "items": {"type": "string", "enum": ["movie", "tv"]}, "title": "订阅媒介类型", "default": ["movie", "tv"]},
+"quality": {"type": "string", "title": "画质首选（可留空）", "default": ""},
+"min_seeders": {"type": "integer", "title": "最少做种数（过滤）", "default": 0},
+"dry_run": {"type": "boolean", "title": "试运行（仅打印不落库）", "default": false},
+"schedule": {"type": "string", "title": "计划任务CRON表达式", "default": "0 8 * * *"}
+}
+}
